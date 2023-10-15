@@ -17,6 +17,7 @@ services:
       - ./init-script/init.sh:/etc/postgresql/init-script/init.sh
       - ./init-script:/etc/postgresql/init-script
       - ./createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+      - ./gmv_stores.sql:/docker-entrypoint-initdb.d/gmv_stores.sql
       - ./init-script/init.sh:/docker-entrypoint-initdb.d/init.sh
     ports:
       - "127.0.0.1:5432:5432"
@@ -36,5 +37,6 @@ services:
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
       - ./init-script/a-wait-for-master.sh:/docker-entrypoint-initdb.d/a-wait-for-master.sh
       - ./createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+      - ./gmv_stores.sql:/docker-entrypoint-initdb.d/gmv_stores.sql
     ports:
       - "127.0.0.1:5433:5432"
