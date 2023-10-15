@@ -1,7 +1,7 @@
 # Automated Replication
 
 ```bash
-sh docker-init.sh
+docker-compose up -d
 ```
 
 
