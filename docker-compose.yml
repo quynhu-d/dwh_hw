@@ -10,6 +10,7 @@ services:
       POSTGRES_PASSWORD: "postgres"
     volumes:
       - ./data:/var/lib/postgresql/data
+      - ./table_values:/var/lib/postgresql/table_values
       - ./data-slave:/var/lib/postgresql/data-slave
       - ./init-script/config/postgres.conf:/etc/postgresql/postgresql.conf
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
@@ -30,6 +31,7 @@ services:
       POSTGRES_PASSWORD: "postgres"
     volumes:
       - ./data-slave:/var/lib/postgresql/data-slave
+      - ./table_values:/var/lib/postgresql/table_values
       - ./init-script/config/postgres.conf:/etc/postgresql/postgreqsl.conf
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
       - ./init-script/a-wait-for-master.sh:/docker-entrypoint-initdb.d/a-wait-for-master.sh
