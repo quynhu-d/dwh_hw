@@ -1,0 +1,4 @@
+purchase_id,store_id,customer_id,purchase_date
+1,1,1,2023-11-01
+2,2,2,2006-07-01
+3,2,5,1989-01-23
