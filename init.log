@@ -1,185 +1,112 @@
-
-2023-10-15 18:49:08 postgres_master  | The files belonging to this database system will be owned by user "postgres".
-2023-10-15 18:49:08 postgres_master  | This user must also own the server process.
-2023-10-15 18:49:08 postgres_master  | 
-2023-10-15 18:57:51 postgres_slave   | The files belonging to this database system will be owned by user "postgres".
-2023-10-15 18:49:08 postgres_master  | The database cluster will be initialized with locale "en_US.utf8".
-2023-10-15 18:49:08 postgres_master  | The default database encoding has accordingly been set to "UTF8".
-2023-10-15 18:49:08 postgres_master  | The default text search configuration will be set to "english".
-2023-10-15 18:49:08 postgres_master  | 
-2023-10-15 18:57:51 postgres_slave   | This user must also own the server process.
-2023-10-15 18:49:08 postgres_master  | Data page checksums are disabled.
-2023-10-15 18:57:51 postgres_slave   | 
-2023-10-15 18:49:08 postgres_master  | 
-2023-10-15 18:57:51 postgres_slave   | The database cluster will be initialized with locale "en_US.utf8".
-2023-10-15 18:49:08 postgres_master  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
-2023-10-15 18:57:51 postgres_slave   | The default database encoding has accordingly been set to "UTF8".
-2023-10-15 18:57:51 postgres_slave   | The default text search configuration will be set to "english".
-2023-10-15 18:49:08 postgres_master  | creating subdirectories ... ok
-2023-10-15 18:57:51 postgres_slave   | 
-2023-10-15 18:49:08 postgres_master  | selecting dynamic shared memory implementation ... posix
-2023-10-15 18:57:51 postgres_slave   | Data page checksums are disabled.
-2023-10-15 18:49:10 postgres_master  | selecting default max_connections ... 100
-2023-10-15 18:57:51 postgres_slave   | 
-2023-10-15 18:57:51 postgres_slave   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
-2023-10-15 18:49:10 postgres_master  | selecting default shared_buffers ... 128MB
-2023-10-15 18:57:51 postgres_slave   | creating subdirectories ... ok
-2023-10-15 18:49:10 postgres_master  | selecting default time zone ... Etc/UTC
-2023-10-15 18:57:51 postgres_slave   | selecting dynamic shared memory implementation ... posix
-2023-10-15 18:57:51 postgres_slave   | selecting default max_connections ... 100
-2023-10-15 18:49:10 postgres_master  | creating configuration files ... ok
-2023-10-15 18:57:51 postgres_slave   | selecting default shared_buffers ... 128MB
-2023-10-15 18:49:19 postgres_master  | running bootstrap script ... ok
-2023-10-15 18:57:51 postgres_slave   | selecting default time zone ... Etc/UTC
-2023-10-15 18:49:32 postgres_master  | performing post-bootstrap initialization ... ok
-2023-10-15 18:57:51 postgres_slave   | creating configuration files ... ok
-2023-10-15 18:49:40 postgres_master  | initdb: warning: enabling "trust" authentication for local connections
-2023-10-15 18:49:40 postgres_master  | You can change this by editing pg_hba.conf or using the option -A, or
-2023-10-15 18:57:51 postgres_slave   | running bootstrap script ... ok
-2023-10-15 18:49:40 postgres_master  | --auth-local and --auth-host, the next time you run initdb.
-2023-10-15 18:49:40 postgres_master  | syncing data to disk ... ok
-2023-10-15 18:49:40 postgres_master  | 
-2023-10-15 18:49:40 postgres_master  | 
-2023-10-15 18:49:40 postgres_master  | Success. You can now start the database server using:
-2023-10-15 18:49:40 postgres_master  | 
-2023-10-15 18:49:40 postgres_master  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
-2023-10-15 18:49:40 postgres_master  | 
-2023-10-15 18:49:40 postgres_master  | waiting for server to start....2023-10-15 15:49:40.424 UTC [49] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
-2023-10-15 18:49:40 postgres_master  | 2023-10-15 15:49:40.433 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-2023-10-15 18:49:40 postgres_master  | 2023-10-15 15:49:40.526 UTC [50] LOG:  database system was shut down at 2023-10-15 15:49:32 UTC
-2023-10-15 18:49:40 postgres_master  | 2023-10-15 15:49:40.604 UTC [49] LOG:  database system is ready to accept connections
-2023-10-15 18:49:40 postgres_master  |  done
-2023-10-15 18:49:40 postgres_master  | server started
-2023-10-15 18:49:47 postgres_master  | CREATE DATABASE
-2023-10-15 18:49:47 postgres_master  | 
-2023-10-15 18:49:47 postgres_master  | 
-2023-10-15 18:49:47 postgres_master  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/createdb.sql
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 2
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 4
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 4
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 7
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 8
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 3
-2023-10-15 18:49:48 postgres_master  | CREATE TABLE
-2023-10-15 18:49:48 postgres_master  | COPY 5
-2023-10-15 18:49:48 postgres_master  | 
-2023-10-15 18:49:48 postgres_master  | 
-2023-10-15 18:49:48 postgres_master  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/gmv_stores.sql
-2023-10-15 18:49:49 postgres_master  | CREATE VIEW
-2023-10-15 18:49:49 postgres_master  |  store_id | category_id | sales_sum 
-2023-10-15 18:49:49 postgres_master  | ----------+-------------+-----------
-2023-10-15 18:49:49 postgres_master  |         1 |           1 |   3000.00
-2023-10-15 18:49:49 postgres_master  |         1 |           4 |    199.00
-2023-10-15 18:49:49 postgres_master  |         2 |           2 |     23.00
-2023-10-15 18:49:49 postgres_master  |         2 |           3 |     20.00
-2023-10-15 18:49:49 postgres_master  | (4 rows)
-2023-10-15 18:49:49 postgres_master  | 
-2023-10-15 18:49:49 postgres_master  | 
-2023-10-15 18:49:49 postgres_master  | 
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.112 UTC [49] LOG:  received fast shutdown request
-2023-10-15 18:49:49 postgres_master  | waiting for server to shut down....2023-10-15 15:49:49.128 UTC [49] LOG:  aborting any active transactions
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.137 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.143 UTC [51] LOG:  shutting down
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.787 UTC [49] LOG:  database system is shut down
-2023-10-15 18:49:49 postgres_master  |  done
-2023-10-15 18:49:49 postgres_master  | server stopped
-2023-10-15 18:49:49 postgres_master  | 
-2023-10-15 18:49:49 postgres_master  | PostgreSQL init process complete; ready for start up.
-2023-10-15 18:49:49 postgres_master  | 
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.995 UTC [1] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.995 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-2023-10-15 18:49:49 postgres_master  | 2023-10-15 15:49:49.995 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-2023-10-15 18:49:50 postgres_master  | 2023-10-15 15:49:50.026 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-2023-10-15 18:49:50 postgres_master  | 2023-10-15 15:49:50.112 UTC [67] LOG:  database system was shut down at 2023-10-15 15:49:49 UTC
-2023-10-15 18:49:50 postgres_master  | 2023-10-15 15:49:50.200 UTC [1] LOG:  database system is ready to accept connections
-2023-10-15 18:56:20 postgres_master  | 2023-10-15 15:56:20.614 UTC [1] LOG:  received fast shutdown request
-2023-10-15 18:56:20 postgres_master  | 2023-10-15 15:56:20.659 UTC [1] LOG:  aborting any active transactions
-2023-10-15 18:56:20 postgres_master  | 2023-10-15 15:56:20.664 UTC [1] LOG:  background worker "logical replication launcher" (PID 73) exited with exit code 1
-2023-10-15 18:56:20 postgres_master  | 2023-10-15 15:56:20.699 UTC [68] LOG:  shutting down
-2023-10-15 18:56:20 postgres_master  | 2023-10-15 15:56:20.976 UTC [1] LOG:  database system is shut down
-2023-10-15 18:56:25 postgres_master  | 
-2023-10-15 18:56:25 postgres_master  | PostgreSQL Database directory appears to contain a database; Skipping initialization
-2023-10-15 18:56:25 postgres_master  | 
-2023-10-15 18:56:25 postgres_master  | 2023-10-15 15:56:25.983 UTC [1] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
-2023-10-15 18:56:25 postgres_master  | 2023-10-15 15:56:25.983 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-2023-10-15 18:56:25 postgres_master  | 2023-10-15 15:56:25.983 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-2023-10-15 18:56:26 postgres_master  | 2023-10-15 15:56:25.999 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-2023-10-15 18:56:26 postgres_master  | 2023-10-15 15:56:26.098 UTC [27] LOG:  database system was shut down at 2023-10-15 15:56:20 UTC
-2023-10-15 18:56:26 postgres_master  | 2023-10-15 15:56:26.227 UTC [1] LOG:  database system is ready to accept connections
-2023-10-15 18:57:53 postgres_slave   | performing post-bootstrap initialization ... ok
-2023-10-15 18:57:55 postgres_slave   | syncing data to disk ... ok
-2023-10-15 18:57:55 postgres_slave   | 
-2023-10-15 18:57:55 postgres_slave   | 
-2023-10-15 18:57:55 postgres_slave   | Success. You can now start the database server using:
-2023-10-15 18:57:55 postgres_slave   | 
-2023-10-15 18:57:55 postgres_slave   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
-2023-10-15 18:57:55 postgres_slave   | 
-2023-10-15 18:57:55 postgres_slave   | initdb: warning: enabling "trust" authentication for local connections
-2023-10-15 18:57:55 postgres_slave   | You can change this by editing pg_hba.conf or using the option -A, or
-2023-10-15 18:57:55 postgres_slave   | --auth-local and --auth-host, the next time you run initdb.
-2023-10-15 18:57:55 postgres_slave   | waiting for server to start....2023-10-15 15:57:55.414 UTC [48] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
-2023-10-15 18:57:55 postgres_slave   | 2023-10-15 15:57:55.424 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-2023-10-15 18:57:55 postgres_slave   | 2023-10-15 15:57:55.457 UTC [49] LOG:  database system was shut down at 2023-10-15 15:57:52 UTC
-2023-10-15 18:57:55 postgres_slave   | 2023-10-15 15:57:55.469 UTC [48] LOG:  database system is ready to accept connections
-2023-10-15 18:57:55 postgres_slave   |  done
-2023-10-15 18:57:55 postgres_slave   | server started
-2023-10-15 18:57:56 postgres_slave   | CREATE DATABASE
-2023-10-15 18:57:56 postgres_slave   | 
-2023-10-15 18:57:56 postgres_slave   | 
-2023-10-15 18:57:56 postgres_slave   | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/createdb.sql
-2023-10-15 18:57:56 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:56 postgres_slave   | COPY 2
-2023-10-15 18:57:56 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:56 postgres_slave   | COPY 4
-2023-10-15 18:57:56 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:56 postgres_slave   | COPY 4
-2023-10-15 18:57:56 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:56 postgres_slave   | COPY 7
-2023-10-15 18:57:56 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:57 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:57 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:57 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:57 postgres_slave   | COPY 8
-2023-10-15 18:57:57 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:57 postgres_slave   | COPY 3
-2023-10-15 18:57:57 postgres_slave   | CREATE TABLE
-2023-10-15 18:57:57 postgres_slave   | COPY 5
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/gmv_stores.sql
-2023-10-15 18:57:57 postgres_slave   | CREATE VIEW
-2023-10-15 18:57:57 postgres_slave   |  store_id | category_id | sales_sum 
-2023-10-15 18:57:57 postgres_slave   | ----------+-------------+-----------
-2023-10-15 18:57:57 postgres_slave   |         1 |           1 |   3000.00
-2023-10-15 18:57:57 postgres_slave   |         1 |           4 |    199.00
-2023-10-15 18:57:57 postgres_slave   |         2 |           2 |     23.00
-2023-10-15 18:57:57 postgres_slave   |         2 |           3 |     20.00
-2023-10-15 18:57:57 postgres_slave   | (4 rows)
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | waiting for server to shut down...2023-10-15 15:57:57.171 UTC [48] LOG:  received fast shutdown request
-2023-10-15 18:57:57 postgres_slave   | .2023-10-15 15:57:57.183 UTC [48] LOG:  aborting any active transactions
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.185 UTC [48] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.185 UTC [50] LOG:  shutting down
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.502 UTC [48] LOG:  database system is shut down
-2023-10-15 18:57:57 postgres_slave   |  done
-2023-10-15 18:57:57 postgres_slave   | server stopped
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | PostgreSQL init process complete; ready for start up.
-2023-10-15 18:57:57 postgres_slave   | 
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.729 UTC [1] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.729 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.729 UTC [1] LOG:  listening on IPv6 address "::", port 5432
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.757 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.779 UTC [66] LOG:  database system was shut down at 2023-10-15 15:57:57 UTC
-2023-10-15 18:57:57 postgres_slave   | 2023-10-15 15:57:57.800 UTC [1] LOG:  database system is ready to accept connections
+2023-10-18 20:19:11 postgres_master  | The files belonging to this database system will be owned by user "postgres".
+2023-10-18 20:19:11 postgres_master  | This user must also own the server process.
+2023-10-18 20:19:11 postgres_master  | 
+2023-10-18 20:19:11 postgres_master  | The database cluster will be initialized with locale "en_US.utf8".
+2023-10-18 20:19:11 postgres_master  | The default database encoding has accordingly been set to "UTF8".
+2023-10-18 20:19:11 postgres_master  | The default text search configuration will be set to "english".
+2023-10-18 20:19:11 postgres_master  | 
+2023-10-18 20:19:11 postgres_master  | Data page checksums are disabled.
+2023-10-18 20:19:11 postgres_master  | 
+2023-10-18 20:19:11 postgres_master  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+2023-10-18 20:19:11 postgres_master  | creating subdirectories ... ok
+2023-10-18 20:19:11 postgres_master  | selecting dynamic shared memory implementation ... posix
+2023-10-18 20:19:12 postgres_master  | selecting default max_connections ... 100
+2023-10-18 20:19:12 postgres_master  | selecting default shared_buffers ... 128MB
+2023-10-18 20:19:12 postgres_master  | selecting default time zone ... Etc/UTC
+2023-10-18 20:19:12 postgres_master  | creating configuration files ... ok
+2023-10-18 20:19:21 postgres_master  | running bootstrap script ... ok
+2023-10-18 20:19:34 postgres_master  | performing post-bootstrap initialization ... ok
+2023-10-18 20:19:41 postgres_master  | initdb: warning: enabling "trust" authentication for local connections
+2023-10-18 20:19:41 postgres_master  | You can change this by editing pg_hba.conf or using the option -A, or
+2023-10-18 20:19:41 postgres_master  | --auth-local and --auth-host, the next time you run initdb.
+2023-10-18 20:19:41 postgres_master  | syncing data to disk ... ok
+2023-10-18 20:19:41 postgres_master  | 
+2023-10-18 20:19:41 postgres_master  | 
+2023-10-18 20:19:41 postgres_master  | Success. You can now start the database server using:
+2023-10-18 20:19:41 postgres_master  | 
+2023-10-18 20:19:41 postgres_master  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+2023-10-18 20:19:41 postgres_master  | 
+2023-10-18 20:19:42 postgres_master  | waiting for server to start....2023-10-18 17:19:42.013 UTC [49] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+2023-10-18 20:19:42 postgres_master  | 2023-10-18 17:19:42.031 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2023-10-18 20:19:42 postgres_master  | 2023-10-18 17:19:42.134 UTC [50] LOG:  database system was shut down at 2023-10-18 17:19:33 UTC
+2023-10-18 20:19:42 postgres_master  | 2023-10-18 17:19:42.225 UTC [49] LOG:  database system is ready to accept connections
+2023-10-18 20:19:42 postgres_master  |  done
+2023-10-18 20:19:42 postgres_master  | server started
+2023-10-18 20:19:48 postgres_master  | CREATE DATABASE
+2023-10-18 20:19:48 postgres_master  | 
+2023-10-18 20:19:48 postgres_master  | 
+2023-10-18 20:19:48 postgres_master  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/createdb.sql
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 2
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 4
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 4
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 7
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 8
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 3
+2023-10-18 20:19:49 postgres_master  | CREATE TABLE
+2023-10-18 20:19:49 postgres_master  | COPY 5
+2023-10-18 20:19:49 postgres_master  | 
+2023-10-18 20:19:49 postgres_master  | 
+2023-10-18 20:19:49 postgres_master  | /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/gmv_stores.sql
+2023-10-18 20:19:50 postgres_master  | CREATE VIEW
+2023-10-18 20:19:50 postgres_master  |  store_id | category_id | sales_sum 
+2023-10-18 20:19:50 postgres_master  | ----------+-------------+-----------
+2023-10-18 20:19:50 postgres_master  |         1 |           1 |   3000.00
+2023-10-18 20:19:50 postgres_master  |         1 |           4 |    199.00
+2023-10-18 20:19:50 postgres_master  |         2 |           2 |     23.00
+2023-10-18 20:19:50 postgres_master  |         2 |           3 |     20.00
+2023-10-18 20:19:50 postgres_master  | (4 rows)
+2023-10-18 20:19:50 postgres_master  | 
+2023-10-18 20:19:50 postgres_master  | 
+2023-10-18 20:19:50 postgres_master  | 
+2023-10-18 20:19:50 postgres_master  | 2023-10-18 17:19:50.406 UTC [49] LOG:  received fast shutdown request
+2023-10-18 20:19:50 postgres_master  | waiting for server to shut down...2023-10-18 17:19:50.434 UTC [49] LOG:  aborting any active transactions
+2023-10-18 20:19:50 postgres_master  | 2023-10-18 17:19:50.439 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+2023-10-18 20:19:50 postgres_master  | .2023-10-18 17:19:50.452 UTC [51] LOG:  shutting down
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.189 UTC [49] LOG:  database system is shut down
+2023-10-18 20:19:51 postgres_master  |  done
+2023-10-18 20:19:51 postgres_master  | server stopped
+2023-10-18 20:19:51 postgres_master  | 
+2023-10-18 20:19:51 postgres_master  | PostgreSQL init process complete; ready for start up.
+2023-10-18 20:19:51 postgres_master  | 
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.336 UTC [1] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.336 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.336 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.371 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.494 UTC [67] LOG:  database system was shut down at 2023-10-18 17:19:50 UTC
+2023-10-18 20:19:51 postgres_master  | 2023-10-18 17:19:51.604 UTC [1] LOG:  database system is ready to accept connections
+2023-10-18 20:21:49 postgres_master  | 2023-10-18 17:21:49.298 UTC [1] LOG:  received fast shutdown request
+2023-10-18 20:21:49 postgres_master  | 2023-10-18 17:21:49.316 UTC [1] LOG:  aborting any active transactions
+2023-10-18 20:21:49 postgres_master  | 2023-10-18 17:21:49.320 UTC [1] LOG:  background worker "logical replication launcher" (PID 73) exited with exit code 1
+2023-10-18 20:21:49 postgres_master  | 2023-10-18 17:21:49.331 UTC [68] LOG:  shutting down
+2023-10-18 20:21:49 postgres_master  | 2023-10-18 17:21:49.844 UTC [1] LOG:  database system is shut down
+2023-10-18 20:21:53 postgres_master  | 
+2023-10-18 20:21:53 postgres_master  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+2023-10-18 20:21:53 postgres_master  | 
+2023-10-18 20:21:53 postgres_master  | 2023-10-18 17:21:53.685 UTC [1] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+2023-10-18 20:21:53 postgres_master  | 2023-10-18 17:21:53.685 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2023-10-18 20:21:53 postgres_master  | 2023-10-18 17:21:53.685 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2023-10-18 20:21:53 postgres_master  | 2023-10-18 17:21:53.704 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2023-10-18 20:21:53 postgres_master  | 2023-10-18 17:21:53.796 UTC [26] LOG:  database system was shut down at 2023-10-18 17:21:49 UTC
+2023-10-18 20:21:53 postgres_master  | 2023-10-18 17:21:53.928 UTC [1] LOG:  database system is ready to accept connections
+2023-10-18 20:23:01 postgres_slave   | 
+2023-10-18 20:23:01 postgres_slave   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+2023-10-18 20:23:01 postgres_slave   | 
+2023-10-18 20:23:02 postgres_slave   | 2023-10-18 17:23:02.090 UTC [1] LOG:  starting PostgreSQL 14.5 (Debian 14.5-2.pgdg110+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+2023-10-18 20:23:02 postgres_slave   | 2023-10-18 17:23:02.090 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2023-10-18 20:23:02 postgres_slave   | 2023-10-18 17:23:02.091 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2023-10-18 20:23:02 postgres_slave   | 2023-10-18 17:23:02.108 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2023-10-18 20:23:02 postgres_slave   | 2023-10-18 17:23:02.179 UTC [27] LOG:  database system was interrupted; last known up at 2023-10-18 17:21:02 UTC
+2023-10-18 20:23:10 postgres_slave   | 2023-10-18 17:23:10.516 UTC [27] LOG:  entering standby mode
+2023-10-18 20:23:10 postgres_slave   | 2023-10-18 17:23:10.661 UTC [27] LOG:  redo starts at 0/2000028
+2023-10-18 20:23:10 postgres_slave   | 2023-10-18 17:23:10.673 UTC [27] LOG:  consistent recovery state reached at 0/2000138
+2023-10-18 20:23:10 postgres_slave   | 2023-10-18 17:23:10.674 UTC [1] LOG:  database system is ready to accept read-only connections
+2023-10-18 20:23:10 postgres_slave   | 2023-10-18 17:23:10.778 UTC [31] LOG:  started streaming WAL from primary at 0/3000000 on timeline 1

@@ -1,1 +1,25 @@
-C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker-compose up -d postgres_master                                [+] Building 0.0s (0/0)                                                                                  docker:default [+] Running 2/2                                                                                                          ✔ Network dwh_hw1_default    Created                                                                              0.1s  ✔ Container postgres_master  Started                                                                              0.2s                                                                                                                         C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker exec -it postgres_master sh /etc/postgresql/init-script/init.sh                                                                                                                      CREATE ROLE                                                                                                                     slot_name        | lsn                                                                                          -------------------------+-----                                                                                          replication_slot_slave1 |                                                                                              (1 row)                                                                                                                                                                                                                                         35209/35209 kB (100%), 1/1 tablespace                                                                                                                                                                                                           C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker-compose restart postgres_master                              [+] Restarting 1/1                                                                                                       ✔ Container postgres_master  Started                                                                              2.0s                                                                                                                         C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker-compose up -d postgres_slave                                 [+] Building 0.0s (0/0)                                                                                  docker:default [+] Running 1/1                                                                                                          ✔ Container postgres_slave  Started                                                                               0.3s                                                                                                                         C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>     
+C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker-compose up -d postgres_master
+
+[+] Building 0.0s (0/0)                                                                                  docker:default
+[+] Running 1/1
+ ✔ Container postgres_master  Started                                                                              0.1s
+
+C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker exec -it postgres_master sh /etc/postgresql/init-script/init.sh 
+
+CREATE ROLE
+        slot_name        | lsn 
+-------------------------+-----
+ replication_slot_slave1 |      
+(1 row)
+35209/35209 kB (100%), 1/1 tablespace
+
+C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker-compose restart postgres_master
+
+[+] Restarting 1/1
+ ✔ Container postgres_master  Started                                                                              1.8s
+
+C:\Users\CompAdmin\Desktop\dqn\hse\FTDS\DWH\dwh_hw1>docker-compose up -d postgres_slave
+
+[+] Building 0.0s (0/0)                                                                                  docker:default
+[+] Running 1/1
+ ✔ Container postgres_slave  Started                                                                              0.1s

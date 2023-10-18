@@ -5,7 +5,7 @@ services:
     image: postgres:14.5
     restart: always
     environment:
-      POSTGRES_DB: "stores_master"
+      POSTGRES_DB: "stores"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
     volumes:
@@ -26,15 +26,13 @@ services:
     image: postgres:14.5
     restart: always
     environment:
-      POSTGRES_DB: "stores_slave"
+      POSTGRES_DB: "stores"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
     volumes:
-      - ./data-slave:/var/lib/postgresql/data-slave
+      - ./data-slave:/var/lib/postgresql/data
       - ./table_values:/var/lib/postgresql/table_values
       - ./init-script/config/postgres.conf:/etc/postgresql/postgreqsl.conf
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
-      - ./createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
-      - ./gmv_stores.sql:/docker-entrypoint-initdb.d/gmv_stores.sql
     ports:
       - "127.0.0.1:5433:5432"
