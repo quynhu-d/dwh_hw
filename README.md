@@ -1,4 +1,6 @@
-# DWH HW1. Automated Replication
+# HSE DWH Homework repository
+
+## HW1. Automated Replication
 
 `main` branch -- via docker-init.sh
 ```bash
