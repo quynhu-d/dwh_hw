@@ -56,26 +56,6 @@ COPY public.customers(
   "customer_phone"
 ) FROM '/var/lib/postgresql/table_values/customers.csv' DELIMITER ',' CSV HEADER;
 
-CREATE TABLE public.price_change(
-  "product_id"              BIGINT NOT NULL PRIMARY KEY,
-  "price_change_ts"         TIMESTAMP NOT NULL,
-  "new_price"               NUMERIC(9, 2) NOT NULL
-);
-
-CREATE TABLE public.deliveries(
-  "delivery_id"             BIGINT NOT NULL PRIMARY KEY,
-  "store_id"                BIGINT REFERENCES stores,
-  "product_id"              BIGINT NOT NULL,
-  "delivery_date"           DATE NOT NULL,
-  "product_count"           INTEGER NOT NULL
-);
-
-CREATE TABLE public.price_change_deliveries(
-  "product_id" INTEGER REFERENCES price_change,
-  "delivery_id" INTEGER REFERENCES deliveries,
-  CONSTRAINT price_deliveries_pk PRIMARY KEY(product_id, delivery_id) 
-);
-
 CREATE TABLE public.products(
   "product_id"              SERIAL PRIMARY KEY,
   "category_id"             BIGINT REFERENCES categories,
@@ -95,6 +75,20 @@ COPY public.products(
   "product_description",
   "product_age_restriction"
 ) FROM '/var/lib/postgresql/table_values/products.csv' DELIMITER ',' CSV HEADER;
+
+CREATE TABLE public.price_change(
+  "product_id"              BIGINT NOT NULL REFERENCES products,
+  "price_change_ts"         TIMESTAMP NOT NULL,
+  "new_price"               NUMERIC(9, 2) NOT NULL
+);
+
+CREATE TABLE public.deliveries(
+  "delivery_id"             BIGINT NOT NULL PRIMARY KEY,
+  "store_id"                BIGINT REFERENCES stores,
+  "product_id"              BIGINT NOT NULL,
+  "delivery_date"           DATE NOT NULL,
+  "product_count"           INTEGER NOT NULL
+);
 
 CREATE TABLE public.purchases(
   "purchase_id"             SERIAL PRIMARY KEY,
