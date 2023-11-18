@@ -10,7 +10,8 @@ CREATE TABLE public.manufacturers (
 
 COPY public.manufacturers(
   "manufacturer_id",
-  "manufacturer_name"
+  "manufacturer_name",
+  "manufacturer_legal_entity"
 ) FROM '/var/lib/postgresql/table_values/manufacturers.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE public.categories(
@@ -33,7 +34,10 @@ CREATE TABLE public.stores(
 
 COPY public.stores(
   "store_id",
-  "store_name"
+  "store_name",
+  "store_country",
+  "store_city",
+  "store_address"
 ) FROM '/var/lib/postgresql/table_values/stores.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE public.customers(
@@ -47,7 +51,9 @@ CREATE TABLE public.customers(
 COPY public.customers(
   "customer_id",
   "customer_fname",
-  "customer_lname"
+  "customer_lname",
+  "customer_gender",
+  "customer_phone"
 ) FROM '/var/lib/postgresql/table_values/customers.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE public.price_change(
@@ -96,7 +102,8 @@ COPY public.purchases(
   "purchase_id",
   "store_id",
   "customer_id",
-  "purchase_date"
+  "purchase_date",
+  "purchase_payment_type"
 ) FROM '/var/lib/postgresql/table_values/purchases.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE public.purchase_items(

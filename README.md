@@ -15,3 +15,7 @@ docker-compose up -d
 For terminal logs see `init.log` (+ `cmd.log` in `main` branch).
 
 - Gross Merchandise Value view created via `gmv_stores.sql`
+
+## HW2. Data Vault, debezium, DMP
+
+- Updated database structure

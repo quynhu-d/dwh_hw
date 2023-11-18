@@ -1,8 +1,8 @@
-customer_id,customer_fname,customer_lname
-1,John,Smith
-2,Rose,Tyler
-3,Donna,Noble
-4,Martha,Smith
-5,Amy,Pond
-6,Rory,Williams
-7,Clara,Oswald
+customer_id,customer_fname,customer_lname,customer_gender,customer_phone
+1,John,Smith,M,000111222
+2,Rose,Tyler,F,1389204
+3,Donna,Noble,F,123123
+4,Martha,Smith,F,147982
+5,Amy,Pond,F,57289
+6,Rory,Williams,M,293847
+7,Clara,Oswald,F,123987
