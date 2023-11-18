@@ -80,14 +80,20 @@ CREATE TABLE public.products(
   "product_id"              SERIAL PRIMARY KEY,
   "category_id"             BIGINT REFERENCES categories,
   "manufacturer_id"         BIGINT REFERENCES manufacturers,
-  "product_name"            VARCHAR(255) NOT NULL
+  "product_name"            VARCHAR(255) NOT NULL,
+  "product_picture_url"     VARCHAR(255) NOT NULL,
+  "product_description"     VARCHAR(255) NOT NULL,
+  "product_age_restriction" INTEGER NOT NULL
 );
 
 COPY public.products(
   "product_id",
   "category_id",
   "manufacturer_id",
-  "product_name"
+  "product_name",
+  "product_picture_url",
+  "product_description",
+  "product_age_restriction"
 ) FROM '/var/lib/postgresql/table_values/products.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE public.purchases(

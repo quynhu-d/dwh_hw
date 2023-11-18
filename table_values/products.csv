@@ -1,9 +1,9 @@
-product_id,category_id,manufacturer_id,product_name
-1,4,1,Ulysses
-2,3,2,Exterminator
-3,1,1,Lamp
-4,2,2,Apple
-5,2,2,Banana
-6,2,1,Apple cake
-7,1,1,Carpet
-8,2,2,Fish finger
+product_id,category_id,manufacturer_id,product_name,product_picture_url,product_description,product_age_restriction
+1,4,1,Ulysses,https://images.app.goo.gl/SLD4eSc4EctaWmcn7,book,16
+2,3,2,Exterminator,https://images.app.goo.gl/Dmj4EU13TXY7XcJ58,weapon,900
+3,1,1,Lamp,https://images.app.goo.gl/j3n17oWBNFHaN3Qa6,light,0
+4,2,2,Apple,https://images.app.goo.gl/jxSBWm3hPSbPJ7yeA,fruit,0
+5,2,2,Banana,https://images.app.goo.gl/njwWa3ErpMKRkLYb9,fruit,0
+6,2,1,Apple cake,https://images.app.goo.gl/ZuAZcsM9aMF3f5MPA,food,0
+7,1,1,Carpet,https://images.app.goo.gl/KyKkun6tJuDwJqge8,furniture,0
+8,2,2,Fish finger,https://images.app.goo.gl/AxK2k2jKnu9LPRU7A,food,0
