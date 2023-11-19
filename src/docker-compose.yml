@@ -52,7 +52,7 @@ services:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data-dv:/var/lib/postgresql/data
       - ./init-script/config/postgres.conf:/etc/postgresql/postgresql.conf
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
       - ./sql_scripts/dv.sql:/docker-entrypoint-initdb.d/dv.sql

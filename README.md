@@ -14,22 +14,32 @@ docker-compose up -d
 
 For terminal logs see `init.log` (+ `cmd.log` in `main` branch).
 
-- Gross Merchandise Value view created via `gmv_stores.sql`
+Gross Merchandise Value view created via `gmv_stores.sql`
 
 ## HW2. Data Vault, debezium, DMP
 
-### Updated database structure (in `createdb.sql`)
+### Updated database structure
+
+Additional attributes added in `createdb.sql`.
+
 ### Data Vault
-- see `dv.sql`, initialised in additional postgresql service at `localhost:5434` (see `postgres_data_vault` in `docker-compose.yml`)
-- **ER-diagram**:
+
+
+Additional postgresql service at `localhost:5434`:
+```bash
+docker-compose up -d postgres_w_dv
+```
+**ER-diagram**:
 ![alt text](https://github.com/quynhu-d/dwh_hw/blob/main/dwh_dv_er_diagram.png?raw=true)
+
 ### debezium
 
 Connect debezium to master:
 
+(Example in `debezium.sh`)
 ```bash
-docker-compose up -d postgres_master
-sleep 90
+# docker-compose up -d postgres_master
+# sleep 90
 docker-compose up -d zookeeper
 sleep 90
 docker-compose up -d broker
