@@ -36,3 +36,25 @@ services:
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
     ports:
       - "127.0.0.1:5433:5432"
+
+  postgres_w_dv:
+    container_name: postgres_data_vault
+    image: postgres:14.5
+    restart: always
+    environment:
+      POSTGRES_DB: "stores"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./data-slave:/var/lib/postgresql/data-slave
+      - ./table_values:/var/lib/postgresql/table_values
+      - ./init-script/config/postgres.conf:/etc/postgresql/postgresql.conf
+      - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
+      - ./init-script/init.sh:/etc/postgresql/init-script/init.sh
+      - ./init-script:/etc/postgresql/init-script
+      - ./createdb.sql:/docker-entrypoint-initdb.d/createdb.sql
+      - ./gmv_stores.sql:/docker-entrypoint-initdb.d/gmv_stores.sql
+      - ./dv.sql:/docker-entrypoint-initdb.d/dv.sql
+    ports:
+      - "127.0.0.1:5434:5432"
