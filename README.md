@@ -19,3 +19,7 @@ For terminal logs see `init.log` (+ `cmd.log` in `main` branch).
 ## HW2. Data Vault, debezium, DMP
 
 - Updated database structure
+- Data Vault (see dv.sql, initialised in additional postgresql service, `localhost:5434` (see `postgres_data_vault` in `docker-compose.yml`))
+
+### ER-diagram:
+![alt text](https://github.com/quynhu-d/dwh_hw/blob/main/dwh_dv_er_diagram.png?raw=true)
