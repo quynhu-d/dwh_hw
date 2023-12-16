@@ -7,11 +7,6 @@
 sh docker-init.sh
 ```
 
-`auto-one-docker-compose` branch -- via one docker-compose execution
-```bash
-docker-compose up -d
-```
-
 For terminal logs see `init.log` (+ `cmd.log` in `main` branch).
 
 Gross Merchandise Value view created via `gmv_stores.sql`
@@ -23,7 +18,6 @@ Gross Merchandise Value view created via `gmv_stores.sql`
 Additional attributes added in `createdb.sql`.
 
 ### Data Vault
-
 
 Additional postgresql service at `localhost:5434`:
 ```bash
@@ -60,4 +54,21 @@ To run airflow:
 cd airflow
 docker-compose up -d
 ```
-Check connection at [localhost:8084](localhost:8084). Login and password: `airflow`.
+Check connection at `localhost:8084`. Login and password: `airflow`.
+
+Add connection in UI (Admin -> Connections):
+
+- Connection type - Postgres
+- Host - host.docker.internal
+- Database - stores
+- Login, password - postgres
+- Port - 5432
+
+## HW 4. BI
+
+Run Metabase:
+```bash
+docker pull metabase/metabase:latest
+docker run -d -p 3000:3000 --name metabase metabase/metabase
+```
+Access Metabase UI at `localhost:3000`.
