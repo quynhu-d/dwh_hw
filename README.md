@@ -51,3 +51,13 @@ sleep 30
 curl -X POST --location "http://localhost:8083/connectors" -H "Content-Type: application/json" -H "Accept: application/json" -d @debezium_connector.json
 ```
 Check connection via `localhost:8080`.
+
+## HW 3. Airflow
+
+To run airflow:
+
+```bash
+cd airflow
+docker-compose up -d
+```
+Check connection at [](localhost:8084). Login and password: `airflow`.
