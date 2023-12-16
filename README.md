@@ -60,4 +60,4 @@ To run airflow:
 cd airflow
 docker-compose up -d
 ```
-Check connection at [](localhost:8084). Login and password: `airflow`.
+Check connection at ![localhost:8084](localhost:8084). Login and password: `airflow`.
