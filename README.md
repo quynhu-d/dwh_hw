@@ -58,11 +58,18 @@ Check connection at `localhost:8084`. Login and password: `airflow`.
 
 Add connection in UI (Admin -> Connections):
 
+- Connection ID - postgres_data_vault
 - Connection type - Postgres
 - Host - host.docker.internal
 - Database - stores
 - Login, password - postgres
-- Port - 5432
+- Port - 5434
+
+Dags:
+- `quynhu_d_whale_dag`: get top customers
+- `quynhu_d_gmv_dag`: get GMV
+
+
 
 ## HW 4. BI
 

@@ -53,9 +53,11 @@ services:
       POSTGRES_PASSWORD: "postgres"
     volumes:
       - ./data-dv:/var/lib/postgresql/data
+      - ./table_values:/var/lib/postgresql/table_values
       - ./init-script/config/postgres.conf:/etc/postgresql/postgresql.conf
       - ./init-script/config/postgres.conf:/etc/postgresql/pg_hba.conf
       - ./sql_scripts/dv.sql:/docker-entrypoint-initdb.d/dv.sql
+      - ./sql_scripts/gmv_synth_data.sql:/docker-entrypoint-initdb.d/gmv_synth_data.sql
     ports:
       - "127.0.0.1:5434:5432"
 

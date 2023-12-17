@@ -99,6 +99,13 @@ CREATE TABLE dwh_detailed.h_customers(
     "hub_rec_src"                   VARCHAR(100) NOT NULL
 );
 
+COPY dwh_detailed.h_customers(
+    "hub_customer_key",
+    "customer_id",
+    "hub_load_dts",
+    "hub_rec_src"
+) FROM '/var/lib/postgresql/table_values/h_customers_synth_data.csv' DELIMITER ',' CSV HEADER;
+
 CREATE TABLE dwh_detailed.s_customers(
     "hub_customer_key"              VARCHAR(100) NOT NULL REFERENCES dwh_detailed.h_customers,    
     "customer_fname"                VARCHAR(100) NOT NULL,
@@ -141,6 +148,13 @@ CREATE TABLE dwh_detailed.h_purchases(
     "hub_load_dts"                  TIMESTAMP NOT NULL,
     "hub_rec_src"                   VARCHAR(100) NOT NULL
 );
+
+COPY dwh_detailed.h_purchases(
+    "hub_purchase_key",
+    "purchase_id",
+    "hub_load_dts",
+    "hub_rec_src"
+) FROM '/var/lib/postgresql/table_values/h_purchases_synth_data.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE dwh_detailed.s_purchases(
     "hub_purchase_key"              VARCHAR(100) NOT NULL REFERENCES dwh_detailed.h_purchases,    
@@ -218,3 +232,11 @@ CREATE TABLE dwh_detailed.l_customers_purchases(
     "lnk_load_dts"                  TIMESTAMP NOT NULL,
     "lnk_rec_src"                   VARCHAR(100) NOT NULL
 );
+
+COPY dwh_detailed.l_customers_purchases(
+    "lnk_customer_purchase_key",
+    "hub_customer_key",
+    "hub_purchase_key",
+    "lnk_load_dts",
+    "lnk_rec_src"
+) FROM '/var/lib/postgresql/table_values/l_customers_purchases_synth_data.csv' DELIMITER ',' CSV HEADER;
