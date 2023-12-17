@@ -32,28 +32,10 @@ create_clean_table_script = '''
     )
 '''
 
-sql_script_3 = '''
-    CREATE TABLE presentation.gmv_{calc_date} AS
-    SELECT
-        pu.store_id,
-        pr.category_id,
-        SUM(pi.product_price * pi.product_count) AS sales_sum
-    FROM
-        business.purchase_items pi
-    JOIN
-        business.products pr ON pi.product_id = pr.product_id
-    JOIN
-        business.purchases pu ON pi.purchase_id = pu.purchase_id
-    GROUP BY
-        pu.store_id,
-        pr.category_id
-    ;
-'''
-
 with DAG("quynhu_d_whale_dag",
          default_args=DEFAULT_ARGS,
          catchup=False,
-         schedule_interval="*/5 * * * *",
+         schedule_interval="0 0 * * *",  # run at 00:00 daily
          max_active_runs=1,
          concurrency=1) as dag:
     

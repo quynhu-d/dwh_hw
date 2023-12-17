@@ -22,7 +22,6 @@ create_schema_script = '''
 '''
 
 create_clean_table_script = '''
-    DROP TABLE IF EXISTS presentation.gmv;
     CREATE TABLE IF NOT EXISTS presentation.gmv(
         "created_at"             TIMESTAMP,
         "business_date"         TIMESTAMP,
@@ -35,7 +34,7 @@ create_clean_table_script = '''
 with DAG("quynhu_d_gmv_dag",
          default_args=DEFAULT_ARGS,
          catchup=False,
-         schedule_interval="*/5 * * * *",
+         schedule_interval="0 0 * * *",  # run at 00:00 daily
          max_active_runs=1,
          concurrency=1) as dag:
     
