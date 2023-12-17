@@ -45,6 +45,13 @@ CREATE TABLE dwh_detailed.h_products(
     "hub_rec_src"                   VARCHAR(100) NOT NULL
 );
 
+COPY dwh_detailed.h_products(
+    "hub_product_key",
+    "product_id",
+    "hub_load_dts",
+    "hub_rec_src"
+) FROM '/var/lib/postgresql/table_values/h_products_synth_data.csv' DELIMITER ',' CSV HEADER;
+
 CREATE TABLE dwh_detailed.s_products_desc(
     "hub_product_key"               VARCHAR(100) NOT NULL REFERENCES dwh_detailed.h_products,    
     "product_name"                  VARCHAR(255) NOT NULL,
@@ -192,6 +199,14 @@ CREATE TABLE dwh_detailed.l_products_purchases(
     "lnk_rec_src"                   VARCHAR(100) NOT NULL
 );
 
+COPY dwh_detailed.l_products_purchases(
+    "lnk_product_purchase_key",
+    "hub_product_key",
+    "hub_purchase_key",
+    "lnk_load_dts",
+    "lnk_rec_src"
+) FROM '/var/lib/postgresql/table_values/l_product_purchase_synth_data.csv' DELIMITER ',' CSV HEADER;
+
 CREATE TABLE dwh_detailed.s_products_purchases(
     "lnk_product_purchase_key"      VARCHAR(100) NOT NULL REFERENCES dwh_detailed.l_products_purchases,    
     "product_count"                 BIGINT NOT NULL,
@@ -200,6 +215,14 @@ CREATE TABLE dwh_detailed.s_products_purchases(
     "sat_rec_src"                   VARCHAR(100) NOT NULL,
     CONSTRAINT s_products_purchases_pk PRIMARY KEY ("lnk_product_purchase_key", "sat_load_dts")
 );
+
+COPY dwh_detailed.s_products_purchases(
+    "lnk_product_purchase_key",    
+    "product_count",
+    "product_price",
+    "sat_load_dts",
+    "sat_rec_src"
+) FROM '/var/lib/postgresql/table_values/s_products_purchases_synth_data.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE dwh_detailed.l_products_deliveries(
     "lnk_product_delivery_key"      VARCHAR(100) NOT NULL PRIMARY KEY,

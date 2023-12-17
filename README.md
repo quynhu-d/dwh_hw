@@ -58,12 +58,12 @@ Check connection at `localhost:8084`. Login and password: `airflow`.
 
 Add connection in UI (Admin -> Connections):
 
-- Connection ID - postgres_data_vault
-- Connection type - Postgres
-- Host - host.docker.internal
-- Database - stores
-- Login, password - postgres
-- Port - 5434
+- Connection ID - `postgres_data_vault`
+- Connection type - `Postgres`
+- Host - `host.docker.internal`
+- Database - `stores`
+- Login, password - `postgres`
+- Port - `5434`
 
 Dags:
 - `quynhu_d_whale_dag`: get top customers
@@ -75,7 +75,19 @@ Dags:
 
 Run Metabase:
 ```bash
-docker pull metabase/metabase:latest
-docker run -d -p 3000:3000 --name metabase metabase/metabase
+docker-compose up -d postgres_w_dv
+docker-compose up -d metabase
 ```
 Access Metabase UI at `localhost:3000`.
+
+Add connection to DB in UI:
+
+- Connection type - `Postgres`
+- Host - `host.docker.internal`
+- Database - `stores`
+- Login, password - `postgres`
+- Port - `5434`
+
+Dashboards:
+
+- [GMV](https://github.com/quynhu-d/dwh_hw/blob/main/imgs/)

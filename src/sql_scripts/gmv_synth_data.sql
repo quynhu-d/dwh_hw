@@ -7,15 +7,15 @@ CREATE TABLE IF NOT EXISTS presentation.whales(
     "customer_gmv"          NUMERIC(9,2),
     "customer_category"     VARCHAR(100) NOT NULL,
     "customer_group"        VARCHAR(100)
-);
+);  
 
--- COPY presentation.whales(
---     "created_at",
---     "customer_id",
---     "customer_gmv",
---     "customer_category",
---     "customer_group"
--- ) FROM '/var/lib/postgresql/table_values/whales_view_synth_data.csv' DELIMITER ',' CSV HEADER;
+COPY presentation.whales(
+    "created_at",
+    "customer_id",
+    "customer_gmv",
+    "customer_category",
+    "customer_group"
+) FROM '/var/lib/postgresql/table_values/whales_view_synth_data.csv' DELIMITER ',' CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS presentation.gmv(
     "created_at"            TIMESTAMP,
