@@ -65,7 +65,7 @@ Add connection in UI (Admin -> Connections):
 - Login, password - `postgres`
 - Port - `5434`
 
-Dags:
+Dags (only create `presentation` schema and tables, dags are scheduled for daily update at 00:00):
 - `quynhu_d_whale_dag`: get top customers
 - `quynhu_d_gmv_dag`: get GMV
 
