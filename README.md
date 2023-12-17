@@ -90,4 +90,7 @@ Add connection to DB in UI:
 
 Dashboards:
 
-- [GMV](https://github.com/quynhu-d/dwh_hw/blob/main/imgs/)
+- [GMV](https://github.com/quynhu-d/dwh_hw/blob/main/imgs/GMV%20Dashboard.pdf)
+- [Clients](https://github.com/quynhu-d/dwh_hw/blob/main/imgs/Client%20dashboard.pdf)
+
+Video: [link](https://drive.google.com/file/d/1wW9ZsUgSktn3iB6ZpWgAmP_Ihbr2efLb/view?usp=sharing).
